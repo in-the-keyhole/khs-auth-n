@@ -1,0 +1,21 @@
+{
+  "name": "auth-n",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server"
+  },
+  "private": true,
+  "dependencies": {
+    "@types/node": "~6.0.60",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "jade": "^1.11.0",
+    "jsonwebtoken": "^7.2.1",
+    "req-flash": "0.0.3",
+    "tldextract": "0.0.5",
+    "underscore": "^1.8.3",
+    "uuid": "^3.0.1"
+  }
+}

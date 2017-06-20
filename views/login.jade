@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        title= pageTitle
+    body
+        #container.col
+
+        img(src='http://www.dstsystems.com/_sites/DST/includes/img/DST-MC-FullColor.svg')
+
+        - each message in flash
+            h4(style="color: red;") #{message}
+
+        form(method='post')
+            input(type="hidden" name="redirect" value="#{redirect}")
+            p
+                label(for='username') Username
+                input(type='text', name='username')
+            p
+                label(for='password') Password
+                input(type='password', name='password')
+
+            input(type='submit', value='Login')
