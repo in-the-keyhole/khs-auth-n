@@ -4,7 +4,6 @@ var flash = require('req-flash');
 var session = require('express-session');
 
 module.exports = api = express();
-
 api.use(bodyParser.json());
 api.use(bodyParser.urlencoded({
     extended: true
@@ -15,6 +14,7 @@ api.set('view options', {layout: false});
 api.use(session({secret: '123'}));
 api.use(flash());
 
+api.use(express.static('public'));
 
 api.namespace = '/api';
 

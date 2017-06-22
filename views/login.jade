@@ -2,21 +2,91 @@ doctype html
 html(lang="en")
     head
         title= pageTitle
+        style(type='text/css').
+            body {
+                font-family: "Open Sans", Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                line-height: 1.66666667;
+            }
+
+            #container-logo {
+                margin: 0 auto;
+                width: 1265px;
+                background-color: #ffffff;
+                margin-left: 0;
+                padding: 0;
+            }
+
+            #container-logo img {
+                max-width: 20%;
+                max-height: 50%;
+                padding-left: 1000px;
+                padding-top: 5px;
+
+            }
+
+            label {
+                padding-right: 10px;
+            }
+
+            #container-input {
+                width: 350px;
+                padding-right: 0px;
+            }
+
+            #container-text {
+                padding-top: 75px;
+                padding-left: 100px;
+            }
+
+            .btn {
+                margin-left: 230px;
+                background: #202F4B;
+                border: 0 none;
+                border-radius: 5px;
+                color: #ffffff;
+                height: 20px;
+                width: 50px;
+            }
+
+            .bar {
+                width: 200px;
+                align-self: auto;
+            }
+
+            #pass {
+                margin-left: 4px;
+            }
+
+            #welcome {
+                font-size: 14px;
+                float: right;
+                padding-right: 600px;
+                padding-top: 0px; /*needs to be adjusted once image shows */
+            }
+
     body
         #container.col
 
-        img(src='https://keyholesoftware.com/wp-content/uploads/2011/10/keyholelogo.png?d18824')
+         div#container-logo
+            img(src='https://keyholesoftware.com/wp-content/uploads/2011/10/keyholelogo.png?d18824')
 
         - each message in flash
             h4(style="color: red;") #{message}
 
-        form(method='post')
-            input(type="hidden" name="redirect" value="#{redirect}")
-            p
-                label(for='username') Username
-                input(type='text', name='username')
-            p
-                label(for='password') Password
-                input(type='password', name='password')
+        div#container-text
+            div#heading
+                img(src='/images/header_white.png')
+            p#welcome
+                    | Welcome to Keyhole Software
+            div#container-input
+                form(method='post')
+                    input(type="hidden" name="redirect" value="#{redirect}")
+                    p
+                        label(for='username') Username
+                        input.bar(type='text', name='username')
+                    p
+                        label(for='password') Password
+                        input.bar#pass(type='password', name='password')
 
-            input(type='submit', value='Login')
+                    input.btn(type='submit', value='Login')
