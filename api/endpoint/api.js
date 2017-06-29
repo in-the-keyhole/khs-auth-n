@@ -29,7 +29,7 @@ exports.configure = function (api) {
                     cookieDomain += '.' + obj.tld;
                 }
                 console.log('cookieDomain:', cookieDomain);
-                res.cookie('_dsta', uuid(), {domain: cookieDomain, maxAge: 14400000});
+                res.cookie('_keyholea', uuid(), {domain: cookieDomain, maxAge: 14400000});
                 res.redirect(req.body.redirect);
                 console.log('redirected to:', req.body.redirect);
             });
